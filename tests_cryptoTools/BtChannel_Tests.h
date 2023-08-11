@@ -1,9 +1,9 @@
 #pragma once
 
-#include <cryptoTools/Common/config.h>
+#include "cryptoTools/Common/config.h"
 
-#include <cryptoTools/Common/CLP.h>
-#include <cryptoTools/Common/TestCollection.h>
+#include "cryptoTools/Common/CLP.h"
+#include "cryptoTools/Common/TestCollection.h"
 
 namespace tests_cryptoTools
 {

@@ -3,7 +3,7 @@
 #include <list>
 #include <functional>
 #include <string>
-#include <cryptoTools/Common/Defines.h>
+#include "cryptoTools/Common/Defines.h"
 //#include <cryptoTools/Common/Defines.h>
 
 //#define OSU_CRYPTO_PP_CAT(a, b) OSU_CRYPTO_PP_CAT_I(a, b)

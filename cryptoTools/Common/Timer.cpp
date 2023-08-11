@@ -1,6 +1,7 @@
-#include <cryptoTools/Common/Timer.h>
-#include <cryptoTools/Common/Defines.h>
-#include <cryptoTools/Common/Log.h>
+#include "cryptoTools/Common/Timer.h"
+#include "cryptoTools/Common/Defines.h"
+#include "cryptoTools/Common/Log.h"
+
 #include <ostream>
 #include <string>
 #include <iomanip>

@@ -1,7 +1,8 @@
-#include <cryptoTools/Common/CuckooIndex.h>
-#include <cryptoTools/Crypto/RandomOracle.h>
-#include <cryptoTools/Crypto/PRNG.h>
-#include <cryptoTools/Common/Log.h>
+#include "cryptoTools/Common/CuckooIndex.h"
+#include "cryptoTools/Crypto/RandomOracle.h"
+#include "cryptoTools/Crypto/PRNG.h"
+#include "cryptoTools/Common/Log.h"
+
 #include <numeric>
 #include <random>
 #include <algorithm>

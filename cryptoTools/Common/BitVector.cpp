@@ -1,7 +1,8 @@
-#include <cryptoTools/Common/BitVector.h>
 #include <sstream>
 #include <cstring>
 #include <iomanip>
+
+#include "cryptoTools/Common/BitVector.h"
 //#include <atomic>
 
 namespace osuCrypto {

@@ -1,9 +1,11 @@
 #include "BetaLibrary.h"
 #ifdef ENABLE_CIRCUITS
+
 #include "cryptoTools/Crypto/RandomOracle.h"
+#include "cryptoTools/Common/Matrix.h"
+
 #include <cstring>
 #include <string>
-#include "cryptoTools/Common/Matrix.h"
 
 #include <algorithm>
 #include <cassert>

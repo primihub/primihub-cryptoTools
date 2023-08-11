@@ -1,15 +1,15 @@
 #pragma once
 // This file and the associated implementation has been placed in the public domain, waiving all copyright. No restrictions are placed on its use.
-#include <cryptoTools/Common/config.h>
+#include "cryptoTools/Common/config.h"
 #ifdef ENABLE_BOOST
 
-#include <cryptoTools/Common/Defines.h>
-#include <cryptoTools/Network/IoBuffer.h>
-#include <cryptoTools/Network/SocketAdapter.h>
-#include <cryptoTools/Network/util.h>
+#include "cryptoTools/Common/Defines.h"
+#include "cryptoTools/Network/IoBuffer.h"
+#include "cryptoTools/Network/SocketAdapter.h"
+#include "cryptoTools/Network/util.h"
 
 #ifdef ENABLE_NET_LOG
-#include <cryptoTools/Common/Log.h>
+#include "cryptoTools/Common/Log.h"
 #endif
 #include <future>
 #include <cassert>

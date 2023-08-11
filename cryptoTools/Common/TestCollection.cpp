@@ -1,8 +1,8 @@
 #include "TestCollection.h"
 
 
-#include <cryptoTools/Common/Log.h>
-#include <cryptoTools/Common/CLP.h>
+#include "cryptoTools/Common/Log.h"
+#include "cryptoTools/Common/CLP.h"
 #include <iomanip>
 #include <cmath>
 #include <algorithm>

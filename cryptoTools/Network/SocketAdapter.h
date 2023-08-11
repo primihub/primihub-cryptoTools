@@ -1,9 +1,10 @@
 #pragma once
-#include <cryptoTools/Common/config.h>
+#include "cryptoTools/Common/config.h"
 #ifdef ENABLE_BOOST
 
+#include "cryptoTools/Common/Defines.h"
+
 #include <boost/asio.hpp>
-#include <cryptoTools/Common/Defines.h>
 #include "IoBuffer.h"
 #include <iostream>
 #include "util.h"

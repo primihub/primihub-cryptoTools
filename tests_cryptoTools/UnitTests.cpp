@@ -1,6 +1,6 @@
-#include <cryptoTools/Common/Log.h>
 #include <functional>
 
+#include "cryptoTools/Common/Log.h"
 #include "tests_cryptoTools/AES_Tests.h"
 #include "tests_cryptoTools/Rijndael256_Tests.h"
 #include "tests_cryptoTools/BtChannel_Tests.h"

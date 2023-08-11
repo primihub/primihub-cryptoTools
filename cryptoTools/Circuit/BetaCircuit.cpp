@@ -5,11 +5,12 @@
 #include <unordered_map>
 #include <set>
 #include <numeric>
-#include "cryptoTools/Common/BitVector.h"
-#include <cryptoTools/Crypto/RandomOracle.h>
 #include <string>
 #include <algorithm>
 #include <list>
+
+#include "cryptoTools/Common/BitVector.h"
+#include "cryptoTools/Crypto/RandomOracle.h"
 
 #ifdef USE_JSON
 #include <nlohmann/json.hpp>

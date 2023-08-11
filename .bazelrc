@@ -1,0 +1,6 @@
+# Linux
+build:linux --cxxopt=-std=c++17
+build:linux --host_cxxopt=-std=c++17
+build:linux --copt=-w
+build:linux --copt=-DENABLE_SSE
+build:linux --linkopt=-lstdc++fs

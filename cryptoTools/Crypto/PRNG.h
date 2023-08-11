@@ -1,10 +1,10 @@
 #pragma once
 // This file and the associated implementation has been placed in the public domain, waiving all copyright. No restrictions are placed on its use.
-#include <cryptoTools/Common/Defines.h>
-#include <cryptoTools/Crypto/AES.h>
+#include "cryptoTools/Common/Defines.h"
+#include "cryptoTools/Crypto/AES.h"
 #include <vector>
 #include <cstring>
-#include <cryptoTools/Common/Aligned.h>
+#include "cryptoTools/Common/Aligned.h"
 
 namespace osuCrypto
 {
