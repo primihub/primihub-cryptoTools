@@ -10,7 +10,7 @@
 #ifndef span_CONFIG_SELECT_SPAN
     #define span_CONFIG_SELECT_SPAN 1
 #endif
-#include <nonstd/span.hpp>
+#include "span.hpp"
 #else
 #include <span>
 #endif
