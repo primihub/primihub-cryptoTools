@@ -1,5 +1,6 @@
 #pragma once
 #include "cryptoTools/Common/config.h"
+#include "cryptoTools/Common/Defines.h"
 #include <array>
 #include <vector>
 #include <memory>
