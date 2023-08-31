@@ -16,15 +16,6 @@ def cryptoTools_preload(repo_reference = ""):
       url = "https://primihub.oss-cn-beijing.aliyuncs.com/tools/rules_foreign_cc_cn-0.8.0.tar.gz",
     )
 
-  if "toolkit_relic" not in native.existing_rules():
-    new_git_repository(
-      name = "toolkit_relic",
-      build_file = "{}//bazel:BUILD.relic".format(reference_index),
-      remote = "https://gitee.com/orzmzp/relic.git",
-      commit = "3f616ad64c3e63039277b8c90915607b6a2c504c",
-      shallow_since = "1581106153 -0800",
-    )
-
   if "com_github_nelhage_rules_boost" not in native.existing_rules():
     git_repository(
       name = "com_github_nelhage_rules_boost",

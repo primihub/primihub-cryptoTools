@@ -10,6 +10,7 @@ cmake(
   name = "relic",
   cache_entries = {
     "CMAKE_INSTALL_LIBDIR": "lib",
+    "MULTI": "PTHREAD",
   },
   build_args = [
     "-j4",
