@@ -5,11 +5,11 @@
 #include <memory>
 
 #include "Common.h"
-#include "cryptoTools/Common/Defines.h"
-#include "cryptoTools/Crypto/AES.h"
-#include "cryptoTools/Common/Log.h"
+#include "src/cryptoTools/Common/Defines.h"
+#include "src/cryptoTools/Crypto/AES.h"
+#include "src/cryptoTools/Common/Log.h"
 
-using namespace osuCrypto;
+using namespace primihub::osuCrypto;
 
 //namespace tests_cryptoTools
 //{

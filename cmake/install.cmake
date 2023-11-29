@@ -73,9 +73,9 @@ install(
 install(EXPORT cryptoToolsTargets
   FILE cryptoToolsTargets.cmake
   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/cryptoTools
-       NAMESPACE oc::
+       NAMESPACE ph_oc::
 )
  export(EXPORT cryptoToolsTargets
        FILE "${CMAKE_CURRENT_BINARY_DIR}/cryptoToolsTargets.cmake"
-       NAMESPACE oc::
+       NAMESPACE ph_oc::
 )

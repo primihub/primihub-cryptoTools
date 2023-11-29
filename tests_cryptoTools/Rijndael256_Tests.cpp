@@ -1,6 +1,6 @@
 //#include "stdafx.h"
 
-#include "cryptoTools/Common/Defines.h"
+#include "src/cryptoTools/Common/Defines.h"
 #ifdef OC_ENABLE_AESNI
 
 #include <thread>
@@ -8,10 +8,10 @@
 #include <memory>
 
 #include "Common.h"
-#include "cryptoTools/Crypto/Rijndael256.h"
-#include "cryptoTools/Common/Log.h"
+#include "src/cryptoTools/Crypto/Rijndael256.h"
+#include "src/cryptoTools/Common/Log.h"
 
-using namespace osuCrypto;
+using namespace primihub::osuCrypto;
 
 #include <iomanip>
 namespace tests_cryptoTools

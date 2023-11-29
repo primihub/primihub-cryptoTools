@@ -1,12 +1,12 @@
 #include "Circuit_Tests.h"
-#include "cryptoTools/Circuit/BetaLibrary.h"
+#include "src/cryptoTools/Circuit/BetaLibrary.h"
 
-#include "cryptoTools/Crypto/PRNG.h"
-#include "cryptoTools/Common/Log.h"
+#include "src/cryptoTools/Crypto/PRNG.h"
+#include "src/cryptoTools/Common/Log.h"
 #include <random>
 #include <fstream>
-#include "cryptoTools/Common/TestCollection.h"
-using namespace oc;
+#include "src/cryptoTools/Common/TestCollection.h"
+using namespace ph_oc;
 #ifdef ENABLE_CIRCUITS
 
 
@@ -159,7 +159,7 @@ void BetaCircuit_int_Adder_Test()
 
 
 
-void BetaCircuit_xor_and_lvl_test(const oc::CLP& cmd)
+void BetaCircuit_xor_and_lvl_test(const ph_oc::CLP& cmd)
 {
 
 	u64 w = 8;
@@ -183,9 +183,9 @@ void BetaCircuit_xor_and_lvl_test(const oc::CLP& cmd)
 
 	for (u64 i = 0; i < w; ++i)
 	{
-		cir.addGate(a[i], c[i], oc::GateType::Xor, t0[i]);
+		cir.addGate(a[i], c[i], ph_oc::GateType::Xor, t0[i]);
 		//cir.addCopy(t0[i], t1[i]);
-		cir.addGate(t0[i], b[i], oc::GateType::And, z[i]);
+		cir.addGate(t0[i], b[i], ph_oc::GateType::And, z[i]);
 	}
 
 
@@ -233,17 +233,17 @@ void BetaCircuit_xor_and_lvl_test(const oc::CLP& cmd)
 		//for (auto gate : cirLvl.mGates)
 		//{
 
-		//    oc::lout << "g " << gate.mInput[0] << " " << gate.mInput[1] << " " <<
+		//    ph_oc::lout << "g " << gate.mInput[0] << " " << gate.mInput[1] << " " <<
 		//        gateToString(gate.mType) << " " << gate.mOutput << std::endl;
 		//}
 	}
 }
 
 
-void compare(oc::BetaCircuit& c0, oc::BetaCircuit& c1)
+void compare(ph_oc::BetaCircuit& c0, ph_oc::BetaCircuit& c1)
 {
 	u64 numTrials = 10;
-	using namespace oc;
+	using namespace ph_oc;
 
 	u64 numInputs = c0.mInputs.size();
 	u64 numOutputs = c0.mOutputs.size();
@@ -300,7 +300,7 @@ void compare(oc::BetaCircuit& c0, oc::BetaCircuit& c1)
 }
 
 
-//void BetaCircuit_reorg_lvl_test(const oc::CLP& cmd)
+//void BetaCircuit_reorg_lvl_test(const ph_oc::CLP& cmd)
 //{
 //
 //	BetaCircuit cir;
@@ -1544,7 +1544,7 @@ auto throwNotEnabled()
 }
 
 void BetaCircuit_SequentialOp_Test() { throwNotEnabled(); }
-void BetaCircuit_xor_and_lvl_test(const oc::CLP& cmd) { throwNotEnabled(); }
+void BetaCircuit_xor_and_lvl_test(const ph_oc::CLP& cmd) { throwNotEnabled(); }
 void BetaCircuit_int_Adder_Test() { throwNotEnabled(); }
 void BetaCircuit_int_Adder_const_Test() { throwNotEnabled(); }
 void BetaCircuit_int_Subtractor_Test() { throwNotEnabled(); }

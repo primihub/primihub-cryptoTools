@@ -1,20 +1,20 @@
 
 #include "../tests_cryptoTools/UnitTests.h"
 #include "Tutorials/Network.h"
-#include "cryptoTools/Network/Channel.h"
-#include "cryptoTools/Network/IOService.h"
-#include "cryptoTools/Common/Matrix.h"
-#include "cryptoTools/Common/CuckooIndex.h"
-#include "cryptoTools/Common/CLP.h"
-using namespace osuCrypto;
+#include "src/cryptoTools/Network/Channel.h"
+#include "src/cryptoTools/Network/IOService.h"
+#include "src/cryptoTools/Common/Matrix.h"
+#include "src/cryptoTools/Common/CuckooIndex.h"
+#include "src/cryptoTools/Common/CLP.h"
+using namespace primihub::osuCrypto;
 #include <sstream>
 #include <fstream>
 
-//#include <cryptoTools/Common/Backtrace.h>
+//#include <src/cryptoTools/Common/Backtrace.h>
 
 #ifdef ENABLE_CIRCUITS
-#include "cryptoTools/Circuit/BetaLibrary.h"
-//#include <cryptoTools/Crypto/Blake2/blake2.h>
+#include "src/cryptoTools/Circuit/BetaLibrary.h"
+//#include <src/cryptoTools/Crypto/Blake2/blake2.h>
 
 void print_aes_bristol()
 {

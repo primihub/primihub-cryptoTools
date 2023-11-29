@@ -1,11 +1,11 @@
 
 
-#include "cryptoTools/Crypto/PRNG.h"
+#include "src/cryptoTools/Crypto/PRNG.h"
 
 int main()
 {
-	using namespace oc;
-	PRNG prng(oc::ZeroBlock);
+	using namespace ph_oc;
+	PRNG prng(ph_oc::ZeroBlock);
 	std::cout << prng.get<int>() << std::endl;
 	return 0;
 }

@@ -1,11 +1,11 @@
 #include "block_Tests.h"
-#include "cryptoTools/Common/block.h"
-#include "cryptoTools/Crypto/PRNG.h"
-#include "cryptoTools/Common/TestCollection.h"
+#include "src/cryptoTools/Common/block.h"
+#include "src/cryptoTools/Crypto/PRNG.h"
+#include "src/cryptoTools/Common/TestCollection.h"
 #include <sstream>
-#include "cryptoTools/Common/BitVector.h"
+#include "src/cryptoTools/Common/BitVector.h"
 
-using namespace oc;
+using namespace ph_oc;
 
 template<typename T>
 std::string bits(T x, u64 width)

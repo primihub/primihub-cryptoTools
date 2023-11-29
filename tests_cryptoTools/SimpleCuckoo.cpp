@@ -1,11 +1,11 @@
 //#include "SimpleCuckoo.h"
-//#include "cryptoTools/Crypto/sha1.h"
-//#include "cryptoTools/Crypto/PRNG.h"
+//#include "src/cryptoTools/Crypto/sha1.h"
+//#include "src/cryptoTools/Crypto/PRNG.h"
 //#include <random>
-//#include "cryptoTools/Common/Log.h"
+//#include "src/cryptoTools/Common/Log.h"
 //#include <numeric>
 //
-//namespace osuCrypto
+//namespace primihub::osuCrypto
 //{
 //
 //

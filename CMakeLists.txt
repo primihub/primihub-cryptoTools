@@ -89,22 +89,22 @@ endif()
 option(FETCH_AUTO      "automatically download and build dependencies" OFF)
 
 #option(FETCH_SPAN_LITE		"download and build span" OFF))
-EVAL(FETCH_SPAN_LITE_IMPL 
+EVAL(FETCH_SPAN_LITE_IMPL
 	(DEFINED FETCH_SPAN_LITE AND FETCH_SPAN_LITE) OR
 	((NOT DEFINED FETCH_SPAN_LITE) AND (FETCH_AUTO AND ENABLE_SPAN_LITE)))
 
 #option(FETCH_RELIC		"download and build Relic" OFF))
-EVAL(FETCH_RELIC_IMPL 
+EVAL(FETCH_RELIC_IMPL
 	(DEFINED FETCH_RELIC AND FETCH_RELIC) OR
 	((NOT DEFINED FETCH_RELIC) AND (FETCH_AUTO AND ENABLE_RELIC)))
 
 #option(FETCH_SODIUM	"download and build Sodium" OFF))
-EVAL(FETCH_SODIUM_IMPL 
+EVAL(FETCH_SODIUM_IMPL
 	(DEFINED FETCH_SODIUM AND FETCH_SODIUM) OR
 	((NOT DEFINED FETCH_SODIUM) AND (FETCH_AUTO AND ENABLE_SODIUM)))
-	
+
 #option(FETCH_BOOST	"download and build Boost" OFF))
-EVAL(FETCH_BOOST_IMPL 
+EVAL(FETCH_BOOST_IMPL
 	(DEFINED FETCH_BOOST AND FETCH_BOOST) OR
 	((NOT DEFINED FETCH_BOOST) AND (FETCH_AUTO AND ENABLE_BOOST)))
 
@@ -113,7 +113,7 @@ if(ENABLE_BOOST)
 endif()
 
 #option(FETCH_BOOST	"download and build Boost" OFF))
-EVAL(FETCH_COPROTO_IMPL 
+EVAL(FETCH_COPROTO_IMPL
 	(DEFINED FETCH_COPROTO AND FETCH_COPROTO) OR
 	((NOT DEFINED FETCH_COPROTO) AND (FETCH_AUTO AND ENABLE_COPROTO)))
 
@@ -158,7 +158,7 @@ add_subdirectory(cryptoTools)
 add_subdirectory(tests_cryptoTools)
 add_subdirectory(frontend_cryptoTools)
 
-configure_file(cryptoTools/Common/config.h.in "cryptoTools/Common/config.h" )
+configure_file(cryptoTools/Common/config.h.in "src/cryptoTools/Common/config.h" )
 
 
 include("cmake/install.cmake")

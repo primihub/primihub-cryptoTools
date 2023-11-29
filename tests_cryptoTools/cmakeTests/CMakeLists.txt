@@ -5,4 +5,4 @@ add_executable(main main.cpp)
 
 find_package(cryptoTools REQUIRED HINTS ${CRYPTOTOOLS_HINT})
 
-target_link_libraries(main oc::cryptoTools)
+target_link_libraries(main ph_oc::cryptoTools)

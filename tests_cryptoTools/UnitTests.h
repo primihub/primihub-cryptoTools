@@ -1,9 +1,9 @@
 #pragma once
 
-#include "cryptoTools/Common/TestCollection.h"
+#include "src/cryptoTools/Common/TestCollection.h"
 
 
 namespace tests_cryptoTools
 {
-    extern osuCrypto::TestCollection Tests;
+    extern primihub::osuCrypto::TestCollection Tests;
 }

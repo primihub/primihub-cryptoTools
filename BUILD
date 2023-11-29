@@ -10,7 +10,7 @@ GEN_CONFIG_H_CMD = select({
     """
       set -x
       tmpdir="cryptoTools.tmp"
-      mkdir -p "$${tmpdir}/cryptoTools/Common"
+      mkdir -p "$${tmpdir}/src/cryptoTools/Common"
       echo "#pragma once \r\n \
     #define ENABLE_RELIC ON \r\n \
     #define ENABLE_CIRCUITS ON \r\n \
@@ -33,16 +33,16 @@ GEN_CONFIG_H_CMD = select({
     #else \r\n \
     #define OC_ENABLE_PORTABLE_AES OFF \r\n \
     #endif \r\n \
-    ">"$${tmpdir}"/cryptoTools/Common/config.h
+    ">"$${tmpdir}"/src/cryptoTools/Common/config.h
         ls -ltrh "$${tmpdir}"
-        mv "$${tmpdir}"/cryptoTools/Common/config.h $(location cryptoTools/Common/config.h)
+        mv "$${tmpdir}"/src/cryptoTools/Common/config.h $(location src/cryptoTools/Common/config.h)
         rm -r -f -- "$${tmpdir}"
     """),
   "//conditions:default": (
     """
       set -x
       tmpdir="cryptoTools.tmp"
-      mkdir -p "$${tmpdir}/cryptoTools/Common"
+      mkdir -p "$${tmpdir}/src/cryptoTools/Common"
       echo "#pragma once \r\n \
     #define ENABLE_RELIC ON \r\n \
     #define ENABLE_CIRCUITS ON \r\n \
@@ -64,9 +64,9 @@ GEN_CONFIG_H_CMD = select({
     #else \r\n \
     #define OC_ENABLE_PORTABLE_AES OFF \r\n \
     #endif \r\n \
-    ">"$${tmpdir}"/cryptoTools/Common/config.h
+    ">"$${tmpdir}"/src/cryptoTools/Common/config.h
         ls -ltrh "$${tmpdir}"
-        mv "$${tmpdir}"/cryptoTools/Common/config.h $(location cryptoTools/Common/config.h)
+        mv "$${tmpdir}"/src/cryptoTools/Common/config.h $(location src/cryptoTools/Common/config.h)
         rm -r -f -- "$${tmpdir}"
     """),
 })
@@ -74,7 +74,7 @@ GEN_CONFIG_H_CMD = select({
 genrule(
   name = "cryptoTools_config_h",
   outs = [
-    "cryptoTools/Common/config.h",
+    "src/cryptoTools/Common/config.h",
   ],
   cmd = GEN_CONFIG_H_CMD,
   visibility = ["//visibility:public"],
@@ -106,29 +106,29 @@ DEFAULT_C_OPT = ENABLE_SSE_COPT + ENABLE_RELIC_COPT
 DEFAILT_LINK_OPT = ENABLE_RELIC_DEPS
 cc_library(
   name = "crypto_tools_gsl",
-  hdrs = glob(["cryptoTools/gsl/*"]),
+  hdrs = glob(["src/cryptoTools/gsl/*"]),
   deps = []
 )
 
 cc_library(
   name = "libcryptoTools",
   srcs = glob([
-    "cryptoTools/Circuit/*.cpp",
-    "cryptoTools/Common/*.cpp",
-    "cryptoTools/Crypto/*.cpp",
-    "cryptoTools/Crypto/blake2/c/*.c",
-    "cryptoTools/Crypto/blake2/sse/*.c",
-    "cryptoTools/Network/*.cpp"],
+    "src/cryptoTools/Circuit/*.cpp",
+    "src/cryptoTools/Common/*.cpp",
+    "src/cryptoTools/Crypto/*.cpp",
+    "src/cryptoTools/Crypto/blake2/c/*.c",
+    "src/cryptoTools/Crypto/blake2/sse/*.c",
+    "src/cryptoTools/Network/*.cpp"],
   ),
   hdrs = [":cryptoTools_config_h"] +
     glob([
-      "cryptoTools/Circuit/*.h",
-      "cryptoTools/Common/*.h",
-      "cryptoTools/Common/*.hpp",
-      "cryptoTools/Crypto/*.h",
-      "cryptoTools/Crypto/blake2/c/*.h",
-      "cryptoTools/Crypto/blake2/sse/*.h",
-      "cryptoTools/Network/*.h"],
+      "src/cryptoTools/Circuit/*.h",
+      "src/cryptoTools/Common/*.h",
+      "src/cryptoTools/Common/*.hpp",
+      "src/cryptoTools/Crypto/*.h",
+      "src/cryptoTools/Crypto/blake2/c/*.h",
+      "src/cryptoTools/Crypto/blake2/sse/*.h",
+      "src/cryptoTools/Network/*.h"],
     ),
   includes = [
     ":cryptoTools_config_h"

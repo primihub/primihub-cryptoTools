@@ -1,5 +1,5 @@
 #pragma once
-#include <cryptoTools/Common/config.h>
+#include <src/cryptoTools/Common/config.h>
 #ifdef ENABLE_BOOST
 
 #include <sstream>
@@ -7,10 +7,10 @@
 #include <queue>
 #include <mutex>
 #include <memory>
-#include "cryptoTools/Network/SocketAdapter.h"
+#include "src/cryptoTools/Network/SocketAdapter.h"
 void networkTutorial();
 
-namespace osuCrypto
+namespace primihub::osuCrypto
 {
 
     class LocalSocket : public SocketInterface {
@@ -45,16 +45,16 @@ namespace osuCrypto
         };
 
         // Construct the LocalSocket with the provided state.
-        LocalSocket(std::shared_ptr<State>& state, u64 idx) 
+        LocalSocket(std::shared_ptr<State>& state, u64 idx)
             : mState(state)
-            , mIdx(idx) 
+            , mIdx(idx)
         {
             assert(mState && idx < 2);
         }
 
         std::shared_ptr<State> mState;
         u64 mIdx;
-    
+
         // A helper function to construct a pair of sockets.
         static std::array<LocalSocket*, 2> makePair()
         {
@@ -85,7 +85,7 @@ namespace osuCrypto
                 mState->mRequestSize[idx] = 0;
                 mState->mBufferedSize[idx] -= sizeRequested;
 
-                // Its safest to unlock before making a callback into 
+                // Its safest to unlock before making a callback into
                 // unknown code...
                 mState->mMtx.unlock();
 
@@ -105,7 +105,7 @@ namespace osuCrypto
         // request and fulfill is when the data arrives.
         void async_recv(
             span<boost::asio::mutable_buffer> buffers,
-            io_completion_handle&& fn) override 
+            io_completion_handle&& fn) override
         {
             u64 sizeRequested = 0;
             for (auto& b : buffers)
@@ -135,7 +135,7 @@ namespace osuCrypto
         // recv request. If so we will try and fulfill it.
         // Finally we call our own callback saying that the
         // data has been sent.
-        void async_send(span<boost::asio::mutable_buffer> buffers, io_completion_handle&& fn) override 
+        void async_send(span<boost::asio::mutable_buffer> buffers, io_completion_handle&& fn) override
         {
             // tryRecv will unlock.
             mState->mMtx.lock();

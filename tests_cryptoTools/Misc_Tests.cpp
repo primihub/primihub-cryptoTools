@@ -1,9 +1,9 @@
 #include "Misc_Tests.h"
 
-#include "cryptoTools/Common/BitVector.h"
+#include "src/cryptoTools/Common/BitVector.h"
 #include "Common.h"
 
-using namespace osuCrypto;
+using namespace primihub::osuCrypto;
 
 namespace tests_cryptoTools
 {

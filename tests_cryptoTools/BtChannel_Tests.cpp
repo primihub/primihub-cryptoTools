@@ -1,33 +1,33 @@
 
-#include "cryptoTools/Common/config.h"
+#include "src/cryptoTools/Common/config.h"
 #ifdef ENABLE_BOOST
 
 #include <thread>
 #include <vector>
 #include <memory>
 
-#include "cryptoTools/Common/Defines.h"
-#include "cryptoTools/Network/IOService.h"
+#include "src/cryptoTools/Common/Defines.h"
+#include "src/cryptoTools/Network/IOService.h"
 
-#include "cryptoTools/Network/Session.h"
-#include "cryptoTools/Network/IOService.h"
-#include "cryptoTools/Network/Channel.h"
+#include "src/cryptoTools/Network/Session.h"
+#include "src/cryptoTools/Network/IOService.h"
+#include "src/cryptoTools/Network/Channel.h"
 
-#include "cryptoTools/Common/Log.h"
-#include "cryptoTools/Common/Timer.h"
-#include "cryptoTools/Common/BitVector.h"
-#include "cryptoTools/Common/Finally.h"
+#include "src/cryptoTools/Common/Log.h"
+#include "src/cryptoTools/Common/Timer.h"
+#include "src/cryptoTools/Common/BitVector.h"
+#include "src/cryptoTools/Common/Finally.h"
 
 
 #include "BtChannel_Tests.h"
 
 #include "Common.h"
-#include "cryptoTools/Common/TestCollection.h"
+#include "src/cryptoTools/Common/TestCollection.h"
 #include <chrono>
 #include <thread>
-#include "cryptoTools/Common/CLP.h"
+#include "src/cryptoTools/Common/CLP.h"
 
-using namespace osuCrypto;
+using namespace primihub::osuCrypto;
 
 namespace tests_cryptoTools
 {
@@ -136,7 +136,7 @@ namespace tests_cryptoTools
                 // });
 
                 // // std::this_thread::sleep_for(std::chrono::seconds(3));
-                // // oc::lout <<  ch1.mBase->mLog << std::endl;
+                // // ph_oc::lout <<  ch1.mBase->mLog << std::endl;
                 // prom.get_future().get();
 
                 bool throws = false;
@@ -234,7 +234,7 @@ namespace tests_cryptoTools
                     });
 
                 //std::this_thread::sleep_for(std::chrono::seconds(3));
-                //oc::lout <<  ch1.mBase->mLog << std::endl;
+                //ph_oc::lout <<  ch1.mBase->mLog << std::endl;
                 prom.get_future().get();
 
                 bool throws = false;
@@ -532,7 +532,7 @@ namespace tests_cryptoTools
         //chl.waitForConnection(std::chrono::seconds(1));
     }
 
-    void BtNetwork_shutdown_test(const osuCrypto::CLP& cmd)
+    void BtNetwork_shutdown_test(const primihub::osuCrypto::CLP& cmd)
     {
 
         IOService ios;
@@ -1266,7 +1266,7 @@ namespace tests_cryptoTools
 
         //struct FP
         //{
-        //    FP() 
+        //    FP()
         //        :mF(mP.get_future())
         //    {}
 
@@ -1427,7 +1427,7 @@ namespace tests_cryptoTools
         u32 countEnd = 1;
         std::promise<void> prom;
 
-        std::array<oc::Channel, 2> chls{
+        std::array<ph_oc::Channel, 2> chls{
             Session(ios, "127.0.0.1:1212", SessionMode::Client).addChannel(),
             Session(ios, "127.0.0.1:1212", SessionMode::Server).addChannel()
         };
@@ -1473,7 +1473,7 @@ namespace tests_cryptoTools
         IOService ios;
         ios.mPrint = false;
 
-        std::array<oc::Channel, 2> chls{
+        std::array<ph_oc::Channel, 2> chls{
             Session(ios, ip, port, SessionMode::Client).addChannel(),
             Session(ios, ip, port, SessionMode::Server).addChannel()
         };
@@ -1482,15 +1482,15 @@ namespace tests_cryptoTools
 
         std::atomic<u32> count; count = 0;
         std::promise<void>prom;
-        std::array<oc::completion_handle, 2> recvFuncs;
-        std::array<oc::completion_handle, 2> sendFuncs;
+        std::array<ph_oc::completion_handle, 2> recvFuncs;
+        std::array<ph_oc::completion_handle, 2> sendFuncs;
 
         std::vector<u8> msg(10);
 
 
         for (u64 j = 0; j < 2; ++j)
         {
-            recvFuncs[j] = [&, j](const oc::error_code& ec) mutable {
+            recvFuncs[j] = [&, j](const ph_oc::error_code& ec) mutable {
                 if (!ec)
                 {
                     auto c = recvFuncs[j];
@@ -1503,7 +1503,7 @@ namespace tests_cryptoTools
                 }
             };
 
-            sendFuncs[j] = [&, j](const oc::error_code& ec)mutable
+            sendFuncs[j] = [&, j](const ph_oc::error_code& ec)mutable
             {
                 if (!ec)
                 {
@@ -1634,7 +1634,7 @@ namespace tests_cryptoTools
         }
     }
 
-    void BtNetwork_queue_Test(const osuCrypto::CLP& cmd)
+    void BtNetwork_queue_Test(const primihub::osuCrypto::CLP& cmd)
     {
         SpscQueue<u64> queue;
 
@@ -1664,7 +1664,7 @@ namespace tests_cryptoTools
             thrds[tt].join();
     }
 
-    void BtNetwork_socketAdapter_test(const osuCrypto::CLP& cmd)
+    void BtNetwork_socketAdapter_test(const primihub::osuCrypto::CLP& cmd)
     {
         struct SmallBuff
         {
@@ -1784,7 +1784,7 @@ namespace tests_cryptoTools
 
 
 
-    void BtNetwork_BasicSocket_test(const osuCrypto::CLP& cmd)
+    void BtNetwork_BasicSocket_test(const primihub::osuCrypto::CLP& cmd)
     {
         IOService ios;
 

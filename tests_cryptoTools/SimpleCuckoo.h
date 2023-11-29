@@ -1,15 +1,15 @@
 //#pragma once
-//#include "cryptoTools/Common/Defines.h"
-//#include "cryptoTools/Common/Log.h"
-//#include "cryptoTools/Common/BitVector.h"
+//#include "src/cryptoTools/Common/Defines.h"
+//#include "src/cryptoTools/Common/Log.h"
+//#include "src/cryptoTools/Common/BitVector.h"
 //
-//#include "cryptoTools/Common/Matrix.h"
+//#include "src/cryptoTools/Common/Matrix.h"
 ////#include <mutex>
 //#include <atomic>
 ////#define THREAD_SAFE_CUCKOO
-//#include "cryptoTools/Common/CuckooIndex.h"
+//#include "src/cryptoTools/Common/CuckooIndex.h"
 //
-//namespace osuCrypto
+//namespace primihub::osuCrypto
 //{
 //
 //    class SimpleCuckoo

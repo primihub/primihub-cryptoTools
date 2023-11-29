@@ -1,15 +1,15 @@
 #include "Cuckoo_Tests.h"
 
 #include "Common.h"
-#include  "cryptoTools/Common/CuckooIndex.h"
+#include  "src/cryptoTools/Common/CuckooIndex.h"
 
-#include  "cryptoTools/Common/Matrix.h"
-#include  "cryptoTools/Crypto/PRNG.h"
+#include  "src/cryptoTools/Common/Matrix.h"
+#include  "src/cryptoTools/Crypto/PRNG.h"
 #include "SimpleCuckoo.h"
 #include <thread>
 #include <numeric>
 
-using namespace osuCrypto;
+using namespace primihub::osuCrypto;
 
 namespace tests_cryptoTools
 {
